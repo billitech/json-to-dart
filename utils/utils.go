@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-var Template = "import 'package:freezed_annotation/freezed_annotation.dart';\nimport 'package:flutter/foundation.dart';\n%[4]s\n\npart '%[1]s.freezed.dart';\npart '%[1]s.g.dart';\n\n@freezed\nclass %[2]s with _$%[1]s {\n  const factory %[2]s({ %[3]s }) = _%[2]s;\n  \n  factory %[2]s.fromJson(Map<String, dynamic> json) => _$%[2]sFromJson(json);\n\n  Map<String, dynamic> toJson() => _$%[2]sToJson(this);\n}"
+var Template = "import 'package:freezed_annotation/freezed_annotation.dart';\nimport 'package:flutter/foundation.dart';\n%[4]s\n\npart '%[1]s.freezed.dart';\npart '%[1]s.g.dart';\n\n@freezed\nclass %[2]s with _$%[2]s {\n  const factory %[2]s({ %[3]s }) = _%[2]s;\n  \n  factory %[2]s.fromJson(Map<String, dynamic> json) => _$%[2]sFromJson(json);\n\n  Map<String, dynamic> toJson() => _$%[2]sToJson(this);\n}"
 
 var BuiltinTypes = StrSlice{
 	"int",

@@ -45,7 +45,8 @@ func main() {
 	for _, file := range files {
 		if strings.HasSuffix(file.Name(), ".json") {
 			name := strings.TrimSuffix(file.Name(), ".json")
-			data, err := os.ReadFile(filepath.Join(args.Src, file.Name()))
+			path := filepath.Join(args.Src, file.Name())
+			data, err := os.ReadFile(path)
 			if err != nil {
 				panic(err)
 			}
@@ -64,7 +65,7 @@ func main() {
 			}
 
 			greenInfo := color.New(color.FgGreen).SprintFunc()
-			fmt.Printf("Processed file:  %s\n", greenInfo(file.Name()))
+			fmt.Printf("Processed file:  %s\n", greenInfo(path))
 		}
 	}
 
